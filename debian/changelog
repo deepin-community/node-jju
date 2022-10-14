@@ -1,0 +1,12 @@
+node-jju (1.1.0-1.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Tue, 29 Dec 2020 01:08:05 +0100
+
+node-jju (1.1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #840171)
+
+ -- Pirate Praveen <praveen@debian.org>  Sun, 09 Oct 2016 11:56:49 +0530

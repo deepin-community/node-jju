@@ -1,0 +1,26 @@
+Source: node-jju
+Section: web
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends:
+ debhelper (>= 9)
+ , dh-buildinfo
+ , nodejs
+Standards-Version: 3.9.8
+Homepage: http://rlidwka.github.io/jju/
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-jju.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-jju.git
+
+Package: node-jju
+Architecture: all
+Depends:
+ ${misc:Depends}
+ , nodejs
+Description: set of utilities to work with JSON / JSON5 documents
+ `jju.parse()` and `jju.stringify()` are better in some cases, but slower than
+ native `JSON.parse()` and `JSON.stringify()` versions. 
+ .
+ See /usr/share/doc/node-jju/README.md for more details.
+ .
+ Node.js is an event-based server-side JavaScript engine.
