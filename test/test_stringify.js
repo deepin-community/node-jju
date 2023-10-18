@@ -1,26 +1,25 @@
-
 var assert = require('assert')
 var parse = require('../').parse
 var stringify = require('../').stringify
 
 function deepEqual(x, y) {
-	if (Number.isNaN(x)) {
-		return assert(Number.isNaN(y))
-	}
-	assert.deepEqual(x, y)
+  if (Number.isNaN(x)) {
+    return assert(Number.isNaN(y))
+  }
+  assert.deepEqual(x, y)
 }
 
 function addTest(arg, arg2, arg3) {
-	function fn() {
-		deepEqual(parse(stringify(arg)), arg2 === undefined ? arg : arg2)
-		if (arg !== undefined) deepEqual(JSON.parse(stringify(arg, {mode: 'json', indent: false})), (arg3 === undefined ? (arg2 === undefined ? arg : arg2) : arg3))
-	}
+  function fn() {
+    deepEqual(parse(stringify(arg)), arg2 === undefined ? arg : arg2)
+    if (arg !== undefined) deepEqual(JSON.parse(stringify(arg, {mode: 'json', indent: false})), (arg3 === undefined ? (arg2 === undefined ? arg : arg2) : arg3))
+  }
 
-	if (typeof(describe) === 'function') {
-		it('test_stringify: ' + JSON.stringify(arg), fn)
-	} else {
-		fn()
-	}
+  if (typeof(describe) === 'function') {
+    it('test_stringify: ' + JSON.stringify(arg), fn)
+  } else {
+    fn()
+  }
 }
 
 addTest(0)
@@ -88,3 +87,8 @@ assert.equal('{a: 1, b: 2, z: 3}', stringify({b:2,a:1,z:3}, {sort_keys: 1}))
 assert.equal('{a: 1, b: {a: 2, b: 5, c: 1}, z: 3}', stringify({b:{c:1,a:2,b:5},a:1,z:3}, {sort_keys: 1}))
 assert.equal('{a: [3, 5, 1], b: 2, z: 3}', stringify({b:2,a:[3,5,1],z:3}, {sort_keys: 1}))
 assert.equal('{b: 2, a: 1, z: 3}', stringify({b:2,a:1,z:3}, {sort_keys: 0}))
+
+// modes
+assert.equal(stringify({ c: Infinity }, { mode: 'json'  }), '{"c": null}')
+assert.equal(stringify({ c: Infinity }, { mode: 'cjson' }), '{"c": null}')
+assert.equal(stringify({ c: Infinity }, { mode: 'json5' }), '{c: Infinity}')

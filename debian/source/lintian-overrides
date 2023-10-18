@@ -1,2 +1,5 @@
 # Its unicode character table (data like a jpg or pdf and node code)
-node-jju source: source-is-missing lib/unicode.js line length is 4241 characters (>512)
+source-is-missing [lib/unicode.js]
+source-contains-prebuilt-javascript-object [lib/unicode.js]
+very-long-line-length-in-source-file * [examples/update-json/node_modules/dottie/package.json:*]
+very-long-line-length-in-source-file lib/unicode.js line 76 is *

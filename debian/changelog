@@ -1,9 +1,52 @@
-node-jju (1.1.0-1.1) unstable; urgency=medium
+node-jju (1.4.0-2) unstable; urgency=medium
 
-  * Non maintainer upload by the Reproducible Builds team.
-  * No source change upload to rebuild on buildd with .buildinfo files.
+  * Team upload
+  * Update lintian override info format in
+    d/source/lintian-overrides on line 2-4.
+  * Update standards version to 4.6.1, no changes needed
+  * Add __proto__ patch to fix autopkgtest
 
- -- Holger Levsen <holger@debian.org>  Tue, 29 Dec 2020 01:08:05 +0100
+ -- Yadd <yadd@debian.org>  Thu, 01 Dec 2022 11:04:53 +0100
+
+node-jju (1.4.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 1.4.0
+  * Enable upstream test (mocha)
+
+ -- Yadd <yadd@debian.org>  Thu, 23 Dec 2021 18:32:50 +0100
+
+node-jju (1.1.0-2) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
+  * Use secure URI in Homepage field.
+  * Bump debhelper from old 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Update Vcs-* headers from URL redirect.
+  * Use canonical URL in Vcs-Git.
+  * Apply multi-arch hints.
+    + node-jju: Add Multi-Arch: foreign.
+  * Bump debhelper from old 12 to 13.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Yadd ]
+  * Declare compliance with policy 4.6.0
+  * Add "Rules-Requires-Root: no"
+  * Change section to javascript
+  * Add debian/gbp.conf
+  * Modernize debian/watch
+    * Fix filenamemangle
+    * Fix GitHub tags regex
+  * Update lintian overrides
+  * Use dh-sequence-nodejs auto test & install (0.9.91 due to package.yaml)
+  * Drop dependency to nodejs
+
+ -- Yadd <yadd@debian.org>  Thu, 23 Dec 2021 17:52:53 +0100
 
 node-jju (1.1.0-1) unstable; urgency=low
 
