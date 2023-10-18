@@ -1,0 +1,16 @@
+Description: drop __proto__ calls
+Author: Yadd <yadd@debian.org>
+Forwarded: no
+Last-Update: 2022-12-01
+
+--- a/test/test_stringify.js
++++ b/test/test_stringify.js
+@@ -52,7 +52,7 @@
+ assert.equal("[1, 2, 3]", stringify([1, 2, 3], {indent: 2}))
+ 
+ var oddball = Object(42)
+-oddball.__proto__ = { __proto__: null }
++Object.setPrototypeOf(oddball, { __proto__: null })
+ assert.equal('{}', stringify(oddball))
+ 
+ /* this WILL throw
